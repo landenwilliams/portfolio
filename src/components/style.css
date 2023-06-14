@@ -1,0 +1,983 @@
+
+@font-face {
+    font-family: 'ShreeDevangari';
+    src: local('ShreeDevangari'),
+        url('../Fonts/ShreeDevanagari.woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kodchasan';
+    src: local('Kodchasan'),
+        url('../Fonts/Kodchasan-SemiBold.woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ShreeDevangariBold';
+    src: local('ShreeDevangariBold'),
+        url('../Fonts/shreedevbold.woff');
+    font-display: swap;
+}
+
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes setBackground {
+    from {
+        background-image: none;
+    }
+
+    to {
+        background-image: url('../images/me.webp');
+    }
+}
+
+@keyframes createBox {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes noBackground {
+    from {
+        background-image: url('../images/me.webp');
+    }
+
+    to {
+        background-image: none;
+    }
+}
+
+body.dark {
+    background-color: #0A0A0B;
+}
+
+.appbody {
+    border-radius: 15px;
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    background:
+        linear-gradient(to right, #00E7FF 25px, transparent 0px) 0 0,
+        linear-gradient(to left, #FFF500 25px, transparent 0px) 100% 100%,
+        linear-gradient(to bottom, #00E7FF 25px, transparent 0px) 0 0,
+        linear-gradient(to top, #FFF500 25px, transparent 0px) 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 300px 300px;
+    animation: createBox .5s;
+    background-attachment: scroll;
+    -webkit-tap-highlight-color: transparent; 
+    -webkit-focus-ring-color: transparent);
+}
+
+.appbody.dark {
+    background-color: #0A0A0B;
+}
+
+
+#stripe {
+    position: fixed;
+    height: 25px;
+    width: 500px;
+    margin-top: 45px;
+    background: linear-gradient(45deg, white, white);
+    transform: skewY(-45deg);
+
+}
+
+#stripe.dark {
+    background: linear-gradient(45deg, #0A0A0B, #0A0A0B);
+}
+
+#stripetwo {
+    position: fixed;
+    height: 25px;
+    width: 500px;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 45px;
+    background-image: linear-gradient(45deg, white, white);
+    transform: skewY(-45deg);
+
+}
+
+#stripetwo.dark {
+    background: linear-gradient(45deg, #0A0A0B, #0A0A0B);
+}
+
+.box {
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    position: fixed;
+    border-radius: 15px;
+    top: 19px;
+    left: 19px;
+}
+
+.boxtwo {
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    position: fixed;
+    border-radius: 15px;
+    bottom: 19px;
+    right: 19px;
+}
+
+.box.dark {
+    background-color: #0A0A0B;
+}
+
+.boxtwo.dark {
+    background-color: #0A0A0B;
+}
+
+#container {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center 10px;
+    overflow: hide;
+    box-sizing: border-box;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    animation: fadeIn 3s linear 0s 1, setBackground 0.45s linear 0s 1 normal forwards;
+
+
+}
+
+#content {
+    display: inline flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+}
+
+#header {
+    margin: 0px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+
+}
+
+#linkscontainer {
+    display: flex;
+    justify-content: space-evenly;
+    text-decoration: none;
+    padding-right: 4%;
+    animation: 0.5s ease-out 0s 1 slideInFromRight;
+}
+
+.themetoggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 88px;
+    height: 64px;
+    border-radius: 100%;
+    background-color: black;
+
+    margin-top: 0;
+    opacity: 10%;
+    padding-top: 2%;
+    margin-right: 0;
+
+}
+
+.themetoggle:hover {
+    opacity: 100%;
+    cursor: default;
+    transform: rotate(360deg);
+    transition: all 0.3s ease-in-out 0s;
+
+}
+
+.themetoggle.dark {
+    background-color: white;
+}
+
+.bi.bi-moon-stars {
+    fill: white;
+}
+
+.bi.bi-moon-stars.dark {
+    fill: #0A0A0B;
+}
+
+.email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 88px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: black;
+    margin-left: 5%;
+    margin-top: 0;
+    opacity: 10%;
+    padding-top: 2%;
+
+}
+
+.email.dark {
+    background-color: white;
+}
+
+.bi.bi.bi-envelope.light {
+    fill: white;
+}
+
+.bi.bi-envelope.dark {
+    fill: #0A0A0B;
+}
+
+.email:hover {
+    opacity: 100%;
+    cursor: default;
+    transform: rotate(360deg);
+    transition: all 0.3s ease-in-out 0s;
+
+}
+
+.linkedin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 88px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: black;
+    margin-left: 5%;
+    margin-top: 0;
+    opacity: 10%;
+    padding-top: 2%;
+    margin-right: 0;
+}
+
+.linkedin.dark {
+    background-color: white;
+}
+
+.linkedicon.light {
+    fill: white;
+}
+
+.linkedicon.dark {
+    fill: #0A0A0B;
+}
+
+.linkedin:hover {
+    opacity: 100%;
+    cursor: default;
+    transform: rotate(360deg);
+    transition: all 0.3s ease-in-out 0s;
+
+}
+
+.github {
+    opacity: 10%;
+    padding: 0px;
+    margin-left: 5%;
+    border-radius: 50%;
+
+}
+
+.bi.bi-github.light {
+    fill: black;
+}
+
+.bi.bi-github.dark {
+    fill: white;
+}
+
+.github:hover {
+    opacity: 100%;
+    cursor: default;
+    transform: rotate(360deg);
+    transition: all 0.3s ease-in-out 0s;
+
+}
+
+.imagecontainer {
+    display: none;
+}
+
+.profileimage {
+    scale: 0;
+    opacity: 0;
+    background-image: url('../images/profileimage.webp');
+    width: 0;
+    height: 0;
+    background-repeat: no-repeat;
+    background-position: center 10px;
+    background-size: 200px;
+
+}
+
+.bodycontainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    padding: 0px;
+}
+
+.bodycontainer.dark {
+    color: white;
+}
+
+.copycontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: no-wrap;
+    text-align: left;
+    padding-left: 50px;
+    align-content: center;
+    width: 50%;
+    padding-left: 3%;
+    margin-top: 2%;
+
+}
+
+
+.welcometitle {
+    display: flex;
+    width: 68%;
+    animation: 0.25s ease-out 0s 1 slideInFromLeft;
+
+
+}
+
+#projectmobile {
+    display: none;
+}
+
+#copyheader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    height: 10%;
+    width: 68%;
+    text-align: left;
+    animation: 0.255s ease-out 0s 1 slideInFromLeft;
+    padding-left: 2%;
+}
+
+#copylabel {
+    flex-shrink: 3;
+}
+
+.homebutton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px;
+    border-style: solid;
+    border-color: transparent;
+    transition: border 1s, box-shadow 1s;
+}
+
+.homebutton:hover {
+    background-color: white;
+    box-shadow: 2px 2px 15px 4px rgba(0, 0, 0, 0.1);
+    scale: 1.05;
+
+    transform: rotate(360deg);
+    transition: all 0.3s ease-in-out 0s;
+
+}
+
+.homebutton.dark:hover {
+    background-color: black;
+    border-color: white;
+}
+
+
+.headericon.dark {
+    fill: white;
+}
+
+.line {
+    min-height: 2px;
+    width: 70%;
+    background: linear-gradient(111.3deg, #00E7FF 9.6%, #FFF500 93.6%);
+    animation: 0.3s ease-out 0s 1 slideInFromLeft;
+    margin-bottom: 10px;
+}
+
+
+
+.copy {
+    display: block;
+    height: 45%;
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    padding-left: 2%;
+    animation: 0.25s ease-out 0s 1 slideInFromLeft;
+    overflow-y: scroll;
+
+}
+
+
+#mobilenav {
+    display: none;
+
+}
+
+#navcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 50%;
+}
+
+#navigation {
+
+    display: flex;
+    flex-wrap: nowrap;
+    align-self: center;
+    flex-direction: column;
+    margin-top: -10%;
+
+}
+
+#navlabel {
+    position: relative;
+    margin-bottom: -10%;
+    padding-left: 7%;
+    animation: 0.3s ease-out 0.1s 1 slideInFromRight;
+}
+
+.navtable {
+    border-radius: 10px;
+    /* background: */
+    /* linear-gradient(to right, black 1px, transparent 0px) 0 0, */
+    /* linear-gradient(to bottom, black 1px, transparent 0px) 0 0; */
+    background: linear-gradient(-125deg, #00E7FF 2%, #FFF500 99%);
+    background-repeat: no-repeat;
+    background-size: 140px 140px;
+    width: 220px;
+    max-width: 220px;
+    height: 200px;
+    animation: 0.3s ease-out 0.1s 1 slideInFromRight;
+
+}
+
+
+
+#navlinktable {
+    background-color: white;
+    margin-top: 2px;
+    margin-left: 2px;
+    border-radius: 10px;
+    padding-top: 5%;
+    padding-left: 12%;
+    white-space: nowrap;
+}
+
+#navlinktable.dark {
+    background-color: #0A0A0B;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-family: "Shree Devanagari 714, sans-serif";
+    padding: 2%;
+}
+
+
+h1 {
+    margin: 0;
+    font-size: 72px;
+    font-family: 'Kodchasan', sans-serif;
+}
+
+h2 {
+
+    font-weight: bold;
+    margin: 0px;
+    font-size: 24px;
+    font-family: "ShreeDevangariBold", sans-serif;
+}
+
+h2.dark {
+    text-shadow: 1px 1px 2px black;
+}
+
+h3 {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+    font-family: 'Kodchasan', sans-serif;
+    transform: translateX(0%);
+    transition: transform 0.5s ease;
+}
+
+h3.dark {
+    color: white;
+}
+
+h3:hover {
+    scale: 1.04;
+    text-transform: bolder;
+    transform: translateX(10%);
+    transition: transform 0.5s ease;
+}
+
+h3::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 10px;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+
+}
+
+h3:hover::after {
+    animation: createBox .5s;
+    background: linear-gradient(111.3deg, #00E7FF 9.6%, #FFF500 93.6%);
+
+
+}
+
+p {
+    margin: 0px;
+    font-size: 16px;
+    /* font-family: "Shree Devanagari 714", sans-serif; */
+    font-family: ShreeDevangari, sans-serif;
+}
+
+
+h5 {
+    margin: 0px;
+    padding-right: 1.5%;
+    padding-bottom: 1.5%;
+    font-size: 14px;
+}
+
+
+
+
+
+@media only screen and (max-width: 1030px) {
+
+
+    .imagecontainer {
+        display: flex;
+        width: 97%;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        opacity: 100%;
+        animation: createBox .5s;
+    }
+
+    .profileimage {
+        scale: 1;
+        opacity: 100%;
+        width: 200px;
+        height: 200px;
+        background-size: 180px;
+        border-radius: 50%;
+        background-color: black;
+
+
+    }
+
+    .themetoggle {
+        opacity: 100%;
+    }
+
+    .profileimage.dark {
+        background-color: white;
+    }
+
+    body {
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    .appbody {
+        background:
+            linear-gradient(to right, #00E7FF 18px, transparent 0px) 0 0,
+            linear-gradient(to bottom, #00E7FF 18px, transparent 0px) 0 0;
+        background-repeat: no-repeat;
+        background-size: 100px 100px;
+        animation: none;
+        background-attachment: scroll;
+
+    }
+
+
+    #container {
+        animation: noBackground 0s;
+
+    }
+
+    .box {
+        background-color: white;
+        top: 15px;
+        left: 15px;
+        height: 160px;
+        width: 160px;
+        border-radius: 10px;
+        position: absolute;
+    }
+
+    .boxtwo {
+        display: none;
+    }
+
+    #stripe {
+        background: none;
+    }
+
+    #stripetwo {
+        background: none;
+    }
+
+    #header {
+        justify-content: center;
+        animation: 0.5s ease-out 0s 1 slideInFromRight;
+    }
+
+    .github {
+        opacity: 100%;
+    }
+
+    .email {
+        opacity: 100%;
+    }
+
+    .linkedin {
+        opacity: 100%;
+    }
+
+    #content {
+        position: relative;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+
+    hr {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .bodycontainer {
+        position: relative;
+        padding: 0px;
+        margin: 0px;
+        display: inline flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    #navcontainer {
+        display: none;
+    }
+
+    .mobilenavcontainer {
+        width: 100%;
+        height: 70px;
+        display: inline-flex;
+        justify-content: center;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        padding: 0;
+        gap: 0;
+        background-color: black;
+        -webkit-box-shadow: 0 -1px 10px 2px rgba(115, 115, 115, 0.75);
+        -moz-box-shadow: 0 -1px 10px 2px rgba(115, 115, 115, 0.75);
+        box-shadow: 0 -1px 10px 2px rgba(115, 115, 115, 0.75);
+
+    }
+
+    .mobilenavcontainer.dark {
+        background-color: white;
+    }
+
+    #linetwo {
+        opacity: 100%;
+    }
+
+    #mobilenav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .traybutton {
+
+        display: flex;
+        list-style: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin-top: 0;
+        margin-left: -10px;
+        margin-right: -10px;
+        gap: 0;
+
+    }
+
+    .buttons {
+        scale: 0.5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        border: 5px;
+        border-style: solid;
+        border-color: transparent;
+        transition: border 1s;
+        margin: 0;
+    }
+
+
+
+
+
+    #buttonone:hover {
+        transform: rotate(360deg);
+        transition: all 0.3s ease-in-out 0s;
+    }
+
+    .bi.bi-bag-fill {
+        fill: white;
+    }
+
+    .bi.bi-bag-fill.dark {
+        fill: black;
+
+    }
+
+    .dumbell {
+        fill: white;
+    }
+
+    .dumbell.dark {
+        fill: black;
+    }
+
+    .newspaper {
+        fill: white;
+    }
+
+    .newspaper.dark {
+        fill: black;
+    }
+
+
+
+    .copycontainer {
+        display: block flex;
+        flex-direction: column;
+        text-align: left;
+        width: 95%;
+        margin-right: 10px;
+        padding-bottom: 80px;
+    }
+
+    #welcome {
+        text-align: left;
+        width: 100%;
+        animation: 0.2s ease-out 0s 1 slideInFromRight;
+    }
+
+    .line {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        width: 97%;
+        animation: 0.2s ease-out 0s 1 slideInFromRight;
+    }
+
+    #copyheader {
+        margin-top: 0;
+        padding-top: 0;
+        height: 10%;
+        width: 95%;
+        text-align: left;
+        animation: 0.2s ease-out 0s 1 slideInFromRight;
+    }
+
+    #copylabel {
+        margin-top: 0;
+    }
+
+
+
+    .copy {
+        animation: 0.25s ease-out 0s 1 slideInFromRight;
+        height: 90%;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    h1 {
+        font-size: 60em;
+    }
+
+    h3 {
+        font-size: 10px;
+        color: white;
+        text-align: center;
+        bottom: 18px;
+    }
+
+    h3.dark {
+        color: black;
+    }
+
+    .traybutton:hover {
+
+        .buttons {
+            border-image: linear-gradient(circle, #00E7FF, #FFF500) 30;
+            border-color: white;
+        }
+
+        .buttons.dark {
+            border-color: black;
+        }
+
+        & h3 {
+            scale: 1.04;
+            text-transform: bolder;
+            transform: translateY(-10%);
+            transition: transform 0.5s ease;
+        }
+
+        & h3::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 45%;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+
+        }
+
+        & h3:hover::after {
+            animation: createBox .5s;
+            background: white;
+
+
+        }
+
+        & h3.dark:hover::after {
+            animation: createBox .5s;
+            background: black;
+
+
+        }
+    }
+
+    h3::after {
+
+        width: 0px;
+
+
+    }
+
+    p {
+        padding-right: 30px;
+        margin-right: 5px;
+
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    #header {
+        scale: 0.75;
+    }
+
+
+}
